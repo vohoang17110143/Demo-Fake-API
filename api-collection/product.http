@@ -1,0 +1,50 @@
+@baseUrl=http://localhost:3000/api/
+
+@resourceName=products
+#Category
+
+# @name GetAllProducts
+GET {{baseUrl}}/{{resourceName}}
+
+###
+# @name filterProduct
+GET {{baseUrl}}/{{resourceName}}?price_gte=300
+###
+
+# @name pagination
+GET {{baseUrl}}/{{resourceName}}?_page=1&_limit=5
+###
+
+# @name sort
+GET {{baseUrl}}/{{resourceName}}?_sort=price&_order=asc
+
+###
+# @name addNewProduct
+
+POST {{baseUrl}}/{{resourceName}}
+Content-type:application/json
+
+{
+    "categoryId": "86454d70-96d6-4f70-94b6-ebc3cd02a574",
+    "name": "Laptop",
+    "color": "salmon",
+    "price": 909,
+    "description": "The Football Is Good For Training And Recreational Purposes",
+    "thumbnailUrl": "http://placeimg.com/400/400"
+}
+
+
+###
+
+# @name updateProduct
+PUT  {{baseUrl}}/{{resourceName}}/2
+Content-Type: application/json
+
+{
+    "name": "New Laptop"
+}
+
+###
+
+# @name removeProduct
+DELETE   {{baseUrl}}/{{resourceName}/2

@@ -1,0 +1,14 @@
+
+# @name getAllProducts
+GET http://localhost:3000/api/products
+
+###
+
+# @name addNewProduct
+POST http://localhost:3000/api/products
+Content-Type: application/json
+
+{
+    "title": "add sản phẩm",
+    "author": "Hoang"
+}
